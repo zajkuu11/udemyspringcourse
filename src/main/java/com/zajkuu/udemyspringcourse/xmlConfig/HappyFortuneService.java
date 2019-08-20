@@ -1,4 +1,4 @@
-package com.zajkuu.udemyspringcourse;
+package com.zajkuu.udemyspringcourse.xmlConfig;
 
 public class HappyFortuneService implements FortuneService {
 

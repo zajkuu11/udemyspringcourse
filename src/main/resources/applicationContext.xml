@@ -11,11 +11,11 @@
 
     <!-- define the dependency -->
     <bean id="myFortuneService"
-          class="com.zajkuu.udemyspringcourse.HappyFortuneService">
+          class="com.zajkuu.udemyspringcourse.xmlConfig.HappyFortuneService">
     </bean>
 
     <bean id="myCoach"
-          class="com.zajkuu.udemyspringcourse.TrackCoach">
+          class="com.zajkuu.udemyspringcourse.xmlConfig.TrackCoach">
         <!-- set up constructor injection -->
         <constructor-arg ref="myFortuneService" />
     </bean>
