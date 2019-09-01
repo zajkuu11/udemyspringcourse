@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class InstructorDetailDemo {
+public class NonCascadeDeleteDemo {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernateOneToOne.cfg.xml")
@@ -18,13 +18,14 @@ public class InstructorDetailDemo {
 
         try {
             InstructorDetail instructorDetail;
-            Instructor instructor;
             session.beginTransaction();
-            int id = 5;
+
+            int id = 4;
             instructorDetail = session.get(InstructorDetail.class, id);
 
-            System.out.println("detail: " + instructorDetail.toString());
-            System.out.println("instructor: " + instructorDetail.getInstructor().toString());
+            //break the reference link
+            instructorDetail.getInstructor().setInstructorDetail(null);
+            session.delete(instructorDetail);
 
             session.getTransaction().commit();
 

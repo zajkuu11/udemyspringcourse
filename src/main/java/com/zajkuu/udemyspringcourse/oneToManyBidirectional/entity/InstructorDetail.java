@@ -1,17 +1,17 @@
-package com.zajkuu.udemyspringcourse.oneToOneMapping.entity;
+package com.zajkuu.udemyspringcourse.oneToManyBidirectional.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Getter
 @Setter
-@Entity
 @NoArgsConstructor
 
+@Entity
 @Table(name = "instructor_detail")
-
 public class InstructorDetail {
 
     @Id
